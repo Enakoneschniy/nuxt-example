@@ -40,7 +40,10 @@
     methods: {
       onClick(lang) {
         this.defaultLang = lang;
-        this.$emit('langChange', lang.code)
+        this.langChange(lang.code);
+      },
+      langChange(code) {
+        this.$emit('langChange', code);
       }
     }
   }
