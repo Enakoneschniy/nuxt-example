@@ -28,6 +28,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    { src: 'assets/bootstrap/scss/bootstrap-reboot.scss', lang: 'scss' },
+    { src: 'assets/bootstrap/scss/bootstrap-grid.scss', lang: 'scss' },
+    { src: 'assets/bootstrap/scss/bootstrap.scss', lang: 'scss' },
   ],
 
   /*
