@@ -12,7 +12,7 @@ export function createRouter() {
     routes: [
       {
         name: 'about',
-        path: '/:lang?/about',
+        path: '/:lang?/about/:test?',
         component: About
       },
       {
