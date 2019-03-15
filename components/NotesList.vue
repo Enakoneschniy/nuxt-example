@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="notes-list">
     <NoteItem/>
     <NoteItem/>
     <NoteItem/>
@@ -15,6 +15,11 @@
   }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  .notes-list {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    display: flex;
+    margin-top: 25px;
+  }
 </style>
