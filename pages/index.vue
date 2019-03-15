@@ -1,15 +1,37 @@
 <template>
-  <div>
-    Home page
-  </div>
+  <main>
+    <NotesList/>
+  </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 
+import NotesList from "../components/NotesList";
 export default {
-  components: {
-    Logo
+  components: { NotesList },
+  data() {
+    return {
+      notes: [
+        {
+          title: 'title1',
+          description: 'description1',
+          createdAt: new Date(),
+          deletedAt: null
+        },
+        {
+          title: 'title2',
+          description: 'description2',
+          createdAt: new Date(),
+          deletedAt: null
+        },
+        {
+          title: 'title3',
+          description: 'description3',
+          createdAt: new Date(),
+          deletedAt: null
+        }
+      ]
+    }
   }
 }
 </script>
