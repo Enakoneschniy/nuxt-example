@@ -36,12 +36,14 @@ module.exports = {
     { src: 'assets/bootstrap/scss/bootstrap-reboot.scss', lang: 'scss' },
     { src: 'assets/bootstrap/scss/bootstrap-grid.scss', lang: 'scss' },
     { src: 'assets/bootstrap/scss/bootstrap.scss', lang: 'scss' },
+    'node_modules/vuejs-dialog/dist/vuejs-dialog.min.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src:'plugins/global.js', ssr: false }
   ],
 
   /*

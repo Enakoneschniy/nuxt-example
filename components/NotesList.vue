@@ -1,5 +1,9 @@
 <template>
   <div class="notes-list">
+    <!--<NoteItem
+      v-for="note of notes" :note="note" :key="`note-${note.id}`"
+      @delete="onNoteDelete"
+    />-->
     <NoteItem v-for="note of notes" :note="note" :key="`note-${note.id}`"/>
   </div>
 </template>
@@ -14,7 +18,12 @@
         type: Array,
         required: true,
       }
-    }
+    },
+   /* methods: {
+      onNoteDelete(id) {
+        this.$emit('delete', id);
+      }
+    }*/
   }
 </script>
 

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Home from './pages/index'
 import About from './pages/about'
+import CreateNote from './pages/create-note'
 
 Vue.use(Router);
 
@@ -11,9 +12,9 @@ export function createRouter() {
     mode: 'history',
     routes: [
       {
-        name: 'about',
-        path: '/:lang?/about/:test?',
-        component: About
+        name: 'create',
+        path: '/create-note',
+        component: CreateNote
       },
       {
         name: 'home',

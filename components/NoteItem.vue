@@ -7,13 +7,16 @@
       </h6>
       <p class="card-text">{{ note.description }}</p>
       <a href="#" class="btn btn-sm btn-outline-primary">Edit</a>
-      <button  class="btn btn-sm btn-outline-danger">Delete</button>
+      <button  class="btn btn-sm btn-outline-danger" @click.prevent="onDelete(note)">Delete</button>
     </div>
   </div>
 </template>
 
 <script>
+
   import moment from 'moment'
+  import { mapActions } from 'vuex'
+
   export default {
     name: "NoteItem",
     data() {
@@ -25,6 +28,21 @@
       note: {
         type: Object,
         required: true,
+      }
+    },
+    methods: {
+      ...mapActions({
+        deleteNote: 'Notes/delete'
+      }),
+      onDelete(note) {
+        this.$dialog
+          .confirm(`Please confirm to delete "${note.title}"`)
+          .then((dialog) => {
+            this.deleteNote(note.id);
+            // this.$emit('delete', note.id);
+          })
+          .catch(function() {});
+
       }
     }
   }

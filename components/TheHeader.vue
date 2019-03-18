@@ -13,7 +13,7 @@
             <nuxt-link class="nav-link" :to="{ name: 'home', params: {lang} }">Home</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link" :to="{ name: 'about', params: {lang, test: 'this_is_test'}, query: { utm: 'd', utm1: 'ds' } }">About</nuxt-link>
+            <nuxt-link class="nav-link" :to="{ name: 'create' }">Create Note</nuxt-link>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
