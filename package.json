@@ -18,7 +18,8 @@
     "moment": "^2.24.0",
     "nuxt": "^2.4.0",
     "vuejs-dialog": "^1.4.0",
-    "vuex": "latest"
+    "vuex": "latest",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "node-sass": "^4.11.0",
