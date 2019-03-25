@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <nuxt-link class="nav-link" :to="{ name: 'home', params: {lang} }">Home</nuxt-link>
+            <nuxt-link class="nav-link" :to="{ name: 'home' }">Home</nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link" :to="{ name: 'create' }">Create Note</nuxt-link>
@@ -20,30 +20,14 @@
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <LanguageSwitcher @langChange="onLangChange"/>
       </div>
     </nav>
   </header>
 </template>
 
 <script>
-  import LanguageSwitcher from "./LanguageSwitcher";
-
   export default {
     name: "TheHeader",
-    components: { LanguageSwitcher },
-    data() {
-      return {
-        lang: 'en'
-      }
-    },
-    methods: {
-      onLangChange(code) {
-        this.lang = code;
-        this.$nuxt.$router.replace({ params: { lang: code} });
-      },
-
-    }
   }
 </script>
 
