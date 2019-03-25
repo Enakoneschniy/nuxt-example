@@ -43,7 +43,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src:'plugins/global.js', ssr: false },
+    { src: 'plugins/global.js', ssr: false },
+    { src: 'plugins/validate.js', ssr: true },
+    { src: 'plugins/truncate.js', ssr: true },
     { src: 'plugins/localStorage.js', ssr: false }
   ],
 

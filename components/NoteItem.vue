@@ -5,8 +5,8 @@
       <h6 class="card-subtitle mb-2 text-muted">
         {{ moment(note.createdAt).format('MMMM Do YYYY, h:mm:ss') }}
       </h6>
-      <p class="card-text">{{ note.description }}</p>
-      <a href="#" class="btn btn-sm btn-outline-primary">Edit</a>
+      <p class="card-text">{{ note.description | truncate(60)}}</p>
+      <nuxt-link :to="{name: 'edit', params: { id: note.id }}" class="btn btn-sm btn-outline-primary">Edit</nuxt-link>
       <button  class="btn btn-sm btn-outline-danger" @click.prevent="onDelete(note)">Delete</button>
     </div>
   </div>

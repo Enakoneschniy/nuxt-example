@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from './pages/index'
-import About from './pages/about'
 import CreateNote from './pages/create-note'
+import EditNote from './pages/edit-note'
 
 Vue.use(Router);
 
@@ -15,6 +15,11 @@ export function createRouter() {
         name: 'create',
         path: '/create-note',
         component: CreateNote
+      },
+      {
+        name: 'edit',
+        path: '/edit-note/:id',
+        component: EditNote
       },
       {
         name: 'home',

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h1 class="text-center mt-4">Create new note</h1>
-    <NoteForm @create="add"/>
+    <h1 class="text-center mt-4">Edit note</h1>
+    <NoteForm/>
   </div>
 </template>
 
@@ -12,6 +12,9 @@
   export default {
     name: "create-note",
     components: { NoteForm },
+    created() {
+      const note = this.$store.getters['Notes/getById']('f169b6401667')
+    },
     methods: mapActions({
         add: 'Notes/add'
     })
