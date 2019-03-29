@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="text-center mt-4">Create new note</h1>
-    <NoteForm @create="add"/>
+    <NoteForm @create="onCreate"/>
   </div>
 </template>
 
@@ -12,24 +12,36 @@
   export default {
     name: "create-note",
     components: { NoteForm },
-    methods: mapActions({
+    methods: {
+      ...mapActions({
         add: 'Notes/add'
-    })
+      }),
+      async onCreate(newNote) {
+        const id = await this.add(newNote);
+        this.$nuxt.$router.replace({
+          name: 'edit',
+          params: { id }
+        });
+      }
+    }
   }
 </script>
 
 <style scoped lang="scss">
   input, textarea {
-    outline: none!important;
+    outline: none !important;
   }
+
   input:focus, textarea:focus {
-    outline: none!important;
+    outline: none !important;
     border-color: #ced4da;
-    box-shadow: none!important;
+    box-shadow: none !important;
   }
+
   .has-error {
     border-color: red !important;
   }
+
   .error-text {
     color: red !important;
   }

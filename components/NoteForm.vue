@@ -30,27 +30,53 @@
         {{ errors.first('description') }}
       </small>
     </div>
-    <button type="submit" class="btn btn-primary btn-block">Create</button>
+    <button type="submit" class="btn btn-primary btn-block" v-if="!isEditMode">Create</button>
+    <button type="submit" class="btn btn-primary btn-block" v-else>Save</button>
   </form>
 </template>
 
 <script>
   export default {
     name: "NoteForm",
+    props: {
+      note: {
+        type: Object,
+        required: false
+      }
+    },
+    computed: {
+      isEditMode() {
+        return !!this.note;
+      }
+    },
     data() {
       return {
         title: '',
         description: ''
       }
     },
+    created() {
+      console.log(this.note);
+      if(this.isEditMode) {
+        this.title = this.note.title;
+        this.description = this.note.description;
+      }
+    },
     methods: {
       onSubmit() {
         this.$validator.validateAll().then((result) => {
-          if (result) {//ok
-            this.$emit('create', {
-              title: this.title,
-              description: this.description
-            })
+          if (result) {
+            if(!this.isEditMode) {
+              this.$emit('create', {
+                title: this.title,
+                description: this.description
+              })
+            } else {
+              this.$emit('update', {
+                title: this.title,
+                description: this.description
+              })
+            }
           }
         });
       }

@@ -12,8 +12,12 @@ export default {
       deletedAt: null
     });
     commit(ADD_NOTE, newNote);
+    return newNote.id;
   },
   delete({ commit }, id) {
     commit(DELETE_NOTE, id)
+  },
+  update({ commit }, noteData) {
+    commit(EDIT_NOTE, noteData);
   }
 }

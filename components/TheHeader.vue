@@ -15,6 +15,9 @@
           <li class="nav-item">
             <nuxt-link class="nav-link" :to="{ name: 'create' }">Create Note</nuxt-link>
           </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link" :to="{ name: 'trash' }">Trash</nuxt-link>
+          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

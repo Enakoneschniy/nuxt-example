@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from './pages/index'
+import Trash from './pages/trash'
 import CreateNote from './pages/create-note'
 import EditNote from './pages/edit-note'
 
@@ -20,6 +21,11 @@ export function createRouter() {
         name: 'edit',
         path: '/edit-note/:id',
         component: EditNote
+      },
+      {
+        name: 'trash',
+        path: '/trash',
+        component: Trash
       },
       {
         name: 'home',
