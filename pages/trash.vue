@@ -1,20 +1,35 @@
 <template>
   <main>
-    <h1 class="text-center mt-4">My Notes</h1>
-    <!--<NotesList :notes="notes" @delete="onNoteDelete"/>-->
-    <NotesList :notes="notes"/>
+    <h1 class="text-center mt-4">
+      Trash
+      <button class="btn btn-light btn-sm" @click="onClear">Clear</button>
+    </h1>
+    <NotesTrashList :notes="notes"/>
   </main>
 </template>
 
 <script>
 
-import NotesList from "../components/NotesList";
-import { mapGetters } from 'vuex';
+import NotesTrashList from "../components/NotesTrashList";
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  components: { NotesList },
+  components: { NotesTrashList },
   computed: mapGetters({
-    notes: 'Notes/getTrashItems'
+    notes: 'Notes/getTrashItems',
   }),
+  methods: {
+    ...mapActions({
+      clear: 'Notes/clear'
+    }),
+    onClear() {
+      this.$dialog
+        .confirm(`Clear trash?`)
+        .then((dialog) => {
+          this.clear();
+        })
+        .catch(function() {});
+    }
+  }
 }
 </script>

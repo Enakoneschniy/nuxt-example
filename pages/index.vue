@@ -1,7 +1,6 @@
 <template>
   <main>
     <h1 class="text-center mt-4">My Notes</h1>
-    <!--<NotesList :notes="notes" @delete="onNoteDelete"/>-->
     <NotesList :notes="notes"/>
   </main>
 </template>

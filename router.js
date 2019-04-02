@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Home from './pages/index'
 import Trash from './pages/trash'
+import Search from './pages/search'
 import CreateNote from './pages/create-note'
 import EditNote from './pages/edit-note'
 
@@ -26,6 +27,11 @@ export function createRouter() {
         name: 'trash',
         path: '/trash',
         component: Trash
+      },
+      {
+        name: 'search',
+        path: '/search',
+        component: Search
       },
       {
         name: 'home',
